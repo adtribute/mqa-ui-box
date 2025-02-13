@@ -3,20 +3,11 @@
     "outDir": "dist",
     "target": "es6",
     "module": "commonjs",
-    "lib": [
-      "es2015",
-      "es2016",
-      "es2017",
-      "es2018",
-      "dom"
-    ],
+    "lib": ["es2015", "es2016", "es2017", "es2018", "dom"],
     "declaration": true,
     "sourceMap": false,
     "removeComments": true,
-    "rootDirs": [
-      "./src",
-      "./tools"
-    ],
+    "rootDirs": ["./src", "./tools"],
     "jsx": "react",
     "moduleResolution": "node",
     "strict": true,
@@ -24,10 +15,12 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "types": ["node", "react"],
+    "allowJs": true,
+    "resolveJsonModule": true
   },
-  "include": [
-    "src",
-    "tools"
-  ]
+  "include": ["src", "tools"],
+  "exclude": ["node_modules", "dist"]
 }
