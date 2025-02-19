@@ -6169,7 +6169,7 @@ enzyme@3.11.0:
   integrity sha512-Dw8/Gs4vRjxY6/6i9wU0V+utmQO9kvh9XLnz3LIudviOnVYDEe2ec+0k+NQoMamn1VrjKgCUOWj5jG/5M5M0Qw==
   dependencies:
     array.prototype.flat "^1.2.3"
-    cheerio "^1.0.0-rc.3"
+    cheerio "1.0.0-rc.3"
     enzyme-shallow-equal "^1.0.1"
     function.prototype.name "^1.1.2"
     has "^1.0.3"
