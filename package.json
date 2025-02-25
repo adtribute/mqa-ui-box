@@ -51,8 +51,8 @@
     "@types/enzyme": "^3.9.1",
     "@types/inline-style-prefixer": "^5.0.0",
     "@types/prop-types": "^15.7.1",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
+    "@types/react": "^16.8.16",
+    "@types/react-dom": "^16.8.4",
     "@types/react-test-renderer": "^16.8.1",
     "@types/sinon": "^7.0.11",
     "@types/storybook__react": "^4.0.1",
@@ -153,7 +153,7 @@
     }
   },
   "lint-staged": {
-    "!(dist)/**/*.{js,ts,tsx}": [
+    "*.{js,ts,tsx}": [
       "xo --fix",
       "git add"
     ]
