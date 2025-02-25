@@ -52,7 +52,7 @@
     "@types/inline-style-prefixer": "^5.0.0",
     "@types/prop-types": "^15.7.1",
     "@types/react": "^18.3.18",
-    "@types/react-dom": "18.2.0",
+    "@types/react-dom": "^18.3.5",
     "@types/react-test-renderer": "^16.8.1",
     "@types/sinon": "^7.0.11",
     "@types/storybook__react": "^4.0.1",
