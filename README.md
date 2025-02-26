@@ -16,6 +16,19 @@
 
 📦 ui-box is a low level CSS-in-JS solution that focuses on being simple, fast and extensible. All CSS properties are set using simple React props, which allows you to easily create reusable components that can be enhanced with additional CSS properties. This is very useful for adding things like margins to components, which would normally require adding non-reusable wrapper elements/classes.
 
+---
+## Publish
+Just run `npm publish` command, it will automatically execute `prepublishOnly` script that will re-build the package
+
+### Installing/updating packages note ❗❗❗  
+There's an issue with either `yarn` or `enzyme@3.11.0` package, but every time a new package is installed/updated, `yarn` tries to update `cheerio` package from v**1.0.0-rc.3** to v**1.0.0**, and throws:
+```
+error cheerio@1.0.0: The engine "node" is incompatible with this module. Expected version ">=18.17". Got "14.21.3"` 
+```
+To fix it I pinned `cheerio` version in `yarn.lock` https://github.com/adtribute/mqa-ui-box/pull/3/commits/141ebc840c6b3e3779bcaa47f62fc67ab5e06dca But when a new package is installed, `yarn` adds `^` sign back to `cheerio` package version in `enzyme@3.11.0` dependencies, so make sure you remove `^` each time a new package is installed/updated
+
+---
+
 ## Install
 
 ```shell
