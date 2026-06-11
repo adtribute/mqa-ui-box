@@ -28,7 +28,7 @@ const Box = React.forwardRef(<E extends React.ElementType>({ is, children, allow
   }
 
   return React.createElement(is || 'div', parsedProps, children)
-}) as <E extends React.ElementType = 'div'>(props: BoxProps<E>) => JSX.Element
+}) as <E extends React.ElementType = 'div'>(props: BoxProps<E>) => React.JSX.Element
 
 // @ts-ignore
 Box.displayName = 'Box'
