@@ -1,11 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { BoxProps } from './types/box-types'
+import { EnhancerProps } from './types/enhancers'
 import { propTypes } from './enhancers'
 import enhanceProps from './enhance-props'
 import { extractAnchorProps, getUseSafeHref } from './utils/safeHref'
 
 const Box = React.forwardRef(<E extends React.ElementType>({ is, children, allowUnsafeHref, ...props }: BoxProps<E>, ref: React.Ref<Element>) => {
+  // React 19 removed defaultProps on function components; apply the default the
+  // same way React did (only when absent, after the user's own props)
+  const enhancerProps = props as EnhancerProps
+  if (enhancerProps.boxSizing === undefined) {
+    enhancerProps.boxSizing = 'border-box'
+  }
+
   // Convert the CSS props to class names (and inject the styles)
   const {className, enhancedProps: parsedProps} = enhanceProps(props)
 
@@ -28,7 +36,7 @@ const Box = React.forwardRef(<E extends React.ElementType>({ is, children, allow
   }
 
   return React.createElement(is || 'div', parsedProps, children)
-}) as <E extends React.ElementType = 'div'>(props: BoxProps<E>) => JSX.Element
+}) as <E extends React.ElementType = 'div'>(props: BoxProps<E>) => React.JSX.Element
 
 // @ts-ignore
 Box.displayName = 'Box'
@@ -38,12 +46,6 @@ Box.propTypes = {
   ...propTypes,
   is: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.elementType]),
   allowUnsafeHref: PropTypes.bool
-}
-
-// @ts-ignore
-Box.defaultProps = {
-  is: 'div',
-  boxSizing: 'border-box'
 }
 
 export default Box

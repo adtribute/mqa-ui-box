@@ -11,8 +11,8 @@ export type Without<T, K> = Pick<T, Exclude<keyof T, K>>
  * @see {@link https://github.com/emotion-js/emotion/blob/b4214b8757c7ede1db1688075251946b2082f9d1/packages/styled-base/types/helper.d.ts#L6-L8}
  */
 export type PropsOf<
-  E extends keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>
-> = JSX.LibraryManagedAttributes<E, React.ComponentPropsWithRef<E>>
+  E extends keyof React.JSX.IntrinsicElements | React.JSXElementConstructor<any>
+> = React.JSX.LibraryManagedAttributes<E, React.ComponentPropsWithRef<E>>
 
 /**
  * Generic component props with "is" prop
@@ -48,4 +48,4 @@ export type PolymorphicBoxProps<
  */
 export type BoxComponent<P = {}, D extends React.ElementType = React.ElementType> = <E extends React.ElementType = D>(
   props: PolymorphicBoxProps<E, P>
-) => JSX.Element
+) => React.JSX.Element
