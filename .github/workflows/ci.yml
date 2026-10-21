@@ -11,10 +11,14 @@ jobs:
   test:
     name: Tests
     runs-on: ubuntu-latest
+    env:
+      NODE_OPTIONS: --use-openssl-ca
     strategy:
       matrix:
-        node_version: [12]
+        node_version: [14.21.3]
     steps:
+      - name: Update system CA certificates
+        run: sudo apt-get update && sudo apt-get install -y ca-certificates
       - uses: actions/checkout@master
 
       - uses: actions/setup-node@v1
@@ -23,7 +27,7 @@ jobs:
       - id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
-      - uses: actions/cache@v1
+      - uses: actions/cache@v4
         id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
