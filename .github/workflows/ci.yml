@@ -15,7 +15,7 @@ jobs:
       NODE_OPTIONS: --use-openssl-ca
     strategy:
       matrix:
-        node_version: [12]
+        node_version: [14.21.3]
     steps:
       - name: Update system CA certificates
         run: sudo apt-get update && sudo apt-get install -y ca-certificates
