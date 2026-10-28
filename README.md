@@ -21,11 +21,9 @@
 Just run `npm publish` command, it will automatically execute `prepublishOnly` script that will re-build the package
 
 ### Installing/updating packages note ❗❗❗  
-There's an issue with either `yarn` or `enzyme@3.11.0` package, but every time a new package is installed/updated, `yarn` tries to update `cheerio` package from v**1.0.0-rc.3** to v**1.0.0**, and throws:
-```
-error cheerio@1.0.0: The engine "node" is incompatible with this module. Expected version ">=18.17". Got "14.21.3"` 
-```
-To fix it I pinned `cheerio` version in `yarn.lock` https://github.com/adtribute/mqa-ui-box/pull/3/commits/141ebc840c6b3e3779bcaa47f62fc67ab5e06dca But when a new package is installed, `yarn` adds `^` sign back to `cheerio` package version in `enzyme@3.11.0` dependencies, so make sure you remove `^` each time a new package is installed/updated
+Enzyme requires Cheerio's legacy CommonJS API. The `resolutions` entry pins
+`cheerio` to `1.0.0-rc.12`, which preserves that API and uses the patched selector
+parser. Keep this resolution while the React 18 Enzyme tests are in use.
 
 ---
 
@@ -445,11 +443,20 @@ console.log(page)
 
 ## Development
 
+Use Node.js 24 (`nvm use`) and Yarn 1.22.22, then run `yarn install --frozen-lockfile`.
+The library runtime requirement remains Node.js 14 or newer; Node.js 24 is required
+for the development tools.
+
 - `yarn dev` starts the development Storybook at http://localhost:9009/.
-- `yarn test` runs the linter, unit tests and code coverage.
+- `yarn build-storybook` builds the same examples as a static site in `.out`.
+- `yarn test` runs ESLint for JavaScript tooling, the existing React 18 unit tests, and V8 source coverage.
+- `yarn coverage` writes the HTML coverage report to `coverage/`.
 - `yarn ava -w` runs the unit tests in watch mode.
 - `yarn ava -u` updates the snapshot tests.
-- `yarn build` transpiles the JavaScript files.
+- `yarn build` type-checks the source and examples and emits the library in `dist/src`.
+- `yarn size` checks the minified bundle including dependencies against the 65 KB uncompressed limit. The Rolldown bundler replaces Webpack, so size measurements are not directly comparable to older results.
+- `yarn playwright install chromium` installs the browser used by `yarn benchmark`.
+- `yarn benchmark` measures 100 batches of 50 production React 18 mounts and unmounts of the all-properties fixture after 10 warmup batches and reports median/p95 milliseconds. It uses Playwright and Vite instead of the unmaintained Puppeteer/Webpack runner; results establish a new baseline and are not comparable to the old runner.
 - `yarn release` releases a new version (requires `np` to be installed globally).
 
 ## License

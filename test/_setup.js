@@ -1,4 +1,4 @@
-import {configure} from 'enzyme'
-import Adapter from '@cfaester/enzyme-adapter-react-18'
+const {configure} = require('enzyme')
+const Adapter = require('@cfaester/enzyme-adapter-react-18').default
 
 configure({adapter: new Adapter()})
