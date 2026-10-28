@@ -7,9 +7,9 @@ export { default as splitProps } from './utils/split-props'
 export { default as splitBoxProps } from './utils/split-box-props'
 export { setClassNamePrefix } from './get-class-name'
 export { configureSafeHref } from './utils/safeHref'
-export { CssProps, BoxCssProps, EnhancerProps, SelectorMap } from './types/enhancers'
-export { BoxProps, BoxOwnProps, PropsOf, PolymorphicBoxProps, BoxComponent } from './types/box-types'
-export {
+export type { CssProps, BoxCssProps, EnhancerProps, SelectorMap } from './types/enhancers'
+export type { BoxProps, BoxOwnProps, PropsOf, PolymorphicBoxProps, BoxComponent } from './types/box-types'
+export type {
   KeyframesPercentageKey,
   KeyframesPositionalKey,
   KeyframesTimeline,
