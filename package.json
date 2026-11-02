@@ -114,7 +114,9 @@
     "workerThreads": false
   },
   "resolutions": {
-    "cheerio": "1.0.0-rc.12"
+    "cheerio": "1.0.0-rc.12",
+    "glob": "^14.0.3",
+    "minimatch": "^11.0.4"
   },
   "c8": {
     "all": true,
