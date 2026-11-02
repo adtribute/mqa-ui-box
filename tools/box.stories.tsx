@@ -1,6 +1,5 @@
 import React, { CSSProperties } from 'react'
 import { default as Box, configureSafeHref, BoxProps } from '../src'
-import { storiesOf } from '@storybook/react'
 import allPropertiesComponent from './all-properties-component'
 import SelectorUniqueness from './fixtures/selector-uniquness-story'
 import KeyframesStory from './fixtures/keyframes-story'
@@ -26,8 +25,11 @@ const CustomComp: React.FunctionComponent<CustomProps> = props => {
   )
 }
 
-storiesOf('Box', module)
-  .add(`is=''`, () => {
+export default { title: 'Box' }
+
+export const ElementType = {
+  name: "is=''",
+  render: () => {
     return (
       <Box>
         <Box is="h1">h1</Box>
@@ -38,8 +40,12 @@ storiesOf('Box', module)
         <Box is="input" />
       </Box>
     )
-  })
-  .add('safe `href`', () => {
+  }
+}
+
+export const SafeHref = {
+  name: "safe `href`",
+  render: () => {
     configureSafeHref({
       enabled: true
     })
@@ -63,8 +69,12 @@ storiesOf('Box', module)
         </Box>
       </Box>
     )
-  })
-  .add('unsafe `href`', () => {
+  }
+}
+
+export const UnsafeHref = {
+  name: "unsafe `href`",
+  render: () => {
     configureSafeHref({
       enabled: false
     })
@@ -88,15 +98,23 @@ storiesOf('Box', module)
         </Box>
       </Box>
     )
-  })
-  .add(`custom comp`, () => (
+  }
+}
+
+export const CustomComponent = {
+  name: "custom comp",
+  render: () => (
     <Box>
       <Box is={CustomComp}>
         <Box>chiiillld</Box>
       </Box>
     </Box>
-  ))
-  .add('background', () => (
+  )
+}
+
+export const Background = {
+  name: "background",
+  render: () => (
     <Box>
       <Box background="red" width="100px" height="100px" />
       <Box backgroundColor="blue" width="100px" height="100px" />
@@ -108,8 +126,12 @@ storiesOf('Box', module)
         height="100px"
       />
     </Box>
-  ))
-  .add('borderRadius', () => (
+  )
+}
+
+export const BorderRadius = {
+  name: "borderRadius",
+  render: () => (
     <Box>
       <RedBox borderRadius="5px" />
       <RedBox borderRadius="10px" borderTopRightRadius="50px" />
@@ -117,8 +139,12 @@ storiesOf('Box', module)
       <RedBox borderRadius="10px" borderBottomLeftRadius="50px" />
       <RedBox borderRadius="10px" borderBottomRightRadius="50px" />
     </Box>
-  ))
-  .add('borders', () => (
+  )
+}
+
+export const Borders = {
+  name: "borders",
+  render: () => (
     <Box>
       <RedBox border="10px solid grey" />
       <RedBox border="10px solid" borderColor="blue" />
@@ -129,13 +155,21 @@ storiesOf('Box', module)
       <RedBox borderBottom="10px solid grey" />
       <RedBox borderLeft="10px solid grey" />
     </Box>
-  ))
-  .add('boxShadow', () => (
+  )
+}
+
+export const BoxShadow = {
+  name: "boxShadow",
+  render: () => (
     <Box>
       <RedBox boxShadow="0 10px 40px black" />
     </Box>
-  ))
-  .add('dimensions', () => (
+  )
+}
+
+export const Dimensions = {
+  name: "dimensions",
+  render: () => (
     <Box>
       <RedBox />
       <RedBox minWidth="400px" />
@@ -143,14 +177,22 @@ storiesOf('Box', module)
       <RedBox minWidth={400} />
       <RedBox minHeight={400} />
     </Box>
-  ))
-  .add('display', () => (
+  )
+}
+
+export const Display = {
+  name: "display",
+  render: () => (
     <Box>
       <RedBox display="inline-block" />
       <RedBox display="inline">inline</RedBox>
     </Box>
-  ))
-  .add('flex', () => (
+  )
+}
+
+export const Flex = {
+  name: "flex",
+  render: () => (
     <Box>
       <Box display="flex" alignItems="center" justifyContent="space-between">
         <RedBox />
@@ -158,25 +200,41 @@ storiesOf('Box', module)
         <RedBox />
       </Box>
     </Box>
-  ))
-  .add('overflow', () => (
+  )
+}
+
+export const Overflow = {
+  name: "overflow",
+  render: () => (
     <Box>
       <Box width="40px" height="40px" overflow="hidden">
         <RedBox />
       </Box>
     </Box>
-  ))
-  .add('position', () => (
+  )
+}
+
+export const Position = {
+  name: "position",
+  render: () => (
     <Box>
       <RedBox position="absolute" left="10px" bottom="10px" />
     </Box>
-  ))
-  .add('spacing', () => (
+  )
+}
+
+export const Spacing = {
+  name: "spacing",
+  render: () => (
     <Box>
       <Box backgroundColor="red" width="100px" height="100px" marginTop="100px" />
     </Box>
-  ))
-  .add('text', () => (
+  )
+}
+
+export const Text = {
+  name: "text",
+  render: () => (
     <Box>
       <Box textAlign="center">Center</Box>
       <Box textAlign="right">Right</Box>
@@ -187,31 +245,51 @@ storiesOf('Box', module)
       <Box fontWeight="bold">bold</Box>
       <Box fontSize="72px">72px</Box>
     </Box>
-  ))
-  .add('list', () => (
+  )
+}
+
+export const List = {
+  name: "list",
+  render: () => (
     <Box is="ol" listStyleType="lower-greek">
       <Box is="li">I՚m</Box>
       <Box is="li">a</Box>
       <Box is="li">list</Box>
     </Box>
-  ))
-  .add('utils', () => (
+  )
+}
+
+export const Utils = {
+  name: "utils",
+  render: () => (
     <Box>
       <Box cursor="pointer">Center</Box>
       <Box boxSizing="border-box">boxSizing: border-box</Box>
     </Box>
-  ))
-  .add('ref', () => (
+  )
+}
+
+export const CallbackRef = {
+  name: "ref",
+  render: () => (
     <Box>
       <Box ref={logRef}>ref</Box>
     </Box>
-  ))
-  .add('ref as React ref', () => (
+  )
+}
+
+export const ObjectRef = {
+  name: "ref as React ref",
+  render: () => (
     <Box>
       <Box ref={reactRef}>React ref</Box>
     </Box>
-  ))
-  .add('props pass through', () => {
+  )
+}
+
+export const PropsPassThrough = {
+  name: "props pass through",
+  render: () => {
     interface CustomComponentProps {
       foo: string
       baz: number
@@ -228,22 +306,47 @@ storiesOf('Box', module)
         <Box is={CustomComponent} foo="bar" baz={123} fizz={{ buzz: true }} />
       </Box>
     )
-  })
-  .add('all properties', () => (
+  }
+}
+
+export const AllProperties = {
+  name: "all properties",
+  render: () => (
     <Box>
       {allPropertiesComponent()}
       {allPropertiesComponent()}
     </Box>
-  ))
-  .add('overrides', () => (
+  )
+}
+
+export const Overrides = {
+  name: "overrides",
+  render: () => (
     <Box>
       <RedBox marginLeft="5px" />
     </Box>
-  ))
-  .add('selectors', () => <SelectorsStory />)
-  .add('selector uniqueness', () => <SelectorUniqueness />)
-  .add('style prop', () => {
+  )
+}
+
+export const Selectors = {
+  name: "selectors",
+  render: () => <SelectorsStory />
+}
+
+export const SelectorUniquenessStory = {
+  name: "selector uniqueness",
+  render: () => <SelectorUniqueness />
+}
+
+export const StyleProp = {
+  name: "style prop",
+  render: () => {
     const style: CSSProperties = { backgroundColor: 'red', width: 200 }
     return <Box style={style}>{JSON.stringify(style, undefined, 4)}</Box>
-  })
-  .add('keyframes', () => <KeyframesStory />)
+  }
+}
+
+export const Keyframes = {
+  name: "keyframes",
+  render: () => <KeyframesStory />
+}
