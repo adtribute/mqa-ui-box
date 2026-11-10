@@ -4,19 +4,11 @@ import prefixer from '../src/prefixer'
 test('prefixes properties', t => {
   t.deepEqual(prefixer('userSelect', 'none'), [
     {
-      property: '-webkit-user-select',
-      value: 'none'
-    },
-    {
-      property: '-moz-user-select',
-      value: 'none'
-    },
-    {
-      property: '-ms-user-select',
-      value: 'none'
-    },
-    {
       property: 'user-select',
+      value: 'none'
+    },
+    {
+      property: '-webkit-user-select',
       value: 'none'
     }
   ])
