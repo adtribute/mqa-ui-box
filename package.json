@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@emotion/hash": "^0.9.2",
-    "inline-style-prefixer": "^5.0.4",
+    "inline-style-prefixer": "^7.0.1",
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
@@ -92,7 +92,7 @@
   "size-limit": [
     {
       "path": "dist/src/index.js",
-      "limit": "65 KB",
+      "limit": "70 KB",
       "gzip": false,
       "brotli": false
     }
