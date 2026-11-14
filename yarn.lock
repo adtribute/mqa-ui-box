@@ -1430,9 +1430,9 @@ async-sema@^3.1.1:
   integrity sha512-tLRNUXati5MFePdAk8dw7Qt7DpxPB60ofAgn8WRhW6a2rcimZnYBP9oxHiv0OHy+Wz7kPMG+t4LGdt31+4EmGg==
 
 ava@^8.1.2:
-  version "8.1.2"
-  resolved "https://registry.yarnpkg.com/ava/-/ava-8.1.2.tgz#c8c41bb9aaba0c6c0a0c13fedff37b9dac2ca4f0"
-  integrity sha512-oJnF53liq0Sf5K0AzZ7GwkH6HxwgsqukGMIOb/hV9QnTKlzj3lV6EXLHJksvlBcHOop6cqdAWa00u8uzqwpxFg==
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/ava/-/ava-8.3.0.tgz#de4cdd733e04a38c0d3f20923dab3d1c95b48bd2"
+  integrity sha512-Tr/p0fmC+oCJo5+m1oJdpmBxC1OO57xtVKlJfbN0gkz31yofpk08jl4Hzx654RdKq1FPc0XYiHF4ZzdqR+87gg==
   dependencies:
     "@vercel/nft" "^1.11.0"
     acorn "^8.19.0"
