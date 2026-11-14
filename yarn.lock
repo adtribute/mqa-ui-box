@@ -1173,9 +1173,9 @@
   integrity sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==
 
 "@types/inline-style-prefixer@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@types/inline-style-prefixer/-/inline-style-prefixer-5.0.0.tgz#8bba0d4735f61bfa2d1a023a23b6a58a63b1166e"
-  integrity sha512-V2YukRG3WNduBSYnY1IY8Gzx25p66guvFqFhTNN2tQ+L3Be1PoV5IcrftMpxj6zSfMXbw0Jgyv6Etomz+OCcRQ==
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@types/inline-style-prefixer/-/inline-style-prefixer-5.0.3.tgz#0e1aa3b20f40866773e2c2314c99d480b74a7ca3"
+  integrity sha512-GOiSoBwH2U8LmbCnOLU6ZRPtm+qycO9sNXCvP+ahG0abpHrYTd1rm6ZPX4qYTFf1mTB6tqTQ9fYaJPcQWGFMSQ==
 
 "@types/istanbul-lib-coverage@^2.0.1":
   version "2.0.6"
