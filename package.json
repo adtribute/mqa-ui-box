@@ -69,7 +69,7 @@
     "sinon": "^22.1.0",
     "size-limit": "^14.3.0",
     "storybook": "^10.6.5",
-    "typescript": "4.9.4",
+    "typescript": "7.0.2",
     "vite": "^8.3.5"
   },
   "prettier": {
